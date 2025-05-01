@@ -1,7 +1,7 @@
 # DSnA
 
-This is the final project for Data Structures and Algorithms
-Contributers: Riley, Ege, Dominic, CJ
+##This is the final project for Data Structures and Algorithms
+###Contributers: Riley, Ege, Dominic, CJ
 
 Packages used: NUnit, BenchmarkDotNet
 
