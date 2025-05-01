@@ -7,7 +7,7 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            InsertionSort.InsertionSortCompare(100, 1000);
+            InsertionSort.InsertionSortCompare(10, 30000);
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DSnA
 {
-    class AlgorithmsBenchmarks
+    public class AlgorithmsBenchmarks
     {
         private int[] arr;
         private List<int> li;
