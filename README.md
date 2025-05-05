@@ -13,3 +13,4 @@ Our algorithms are Bubble Sort, Insertion Sort, and Merge Sort
 We will compare the performance of each algorithm using a randomized selection of each data structure.
 
 We will also put each algorithm to work on a set of real-world data and compare and analyze the performance.
+The real world data used is the "Online Retail" dataset from [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail)
