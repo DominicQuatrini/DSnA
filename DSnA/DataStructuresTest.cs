@@ -11,41 +11,6 @@ namespace DSnA
     // Dominic and Riley created this code
     internal class DataStructuresTest
     {
-        //public static void Performance(int size)
-        //{
-        //    Console.WriteLine($"Searching in an array of {size} integers: ");
-
-        //    int[] array = GenerateRandomArray(size);
-
-        //    BinarySearchTree bst = new BinarySearchTree();
-        //    foreach (int value in array)
-        //    {
-        //        bst.Insert(value);
-        //    }
-        //    SinglyLinkedList sll = new SinglyLinkedList();
-        //    for (int i = 0; i < array.Length; i++)
-        //        sll.InsertFirst(array[i]);
-
-        //    Random random = new Random();
-        //    int target = array[random.Next(array.Length)];
-        //    Stopwatch sw = new Stopwatch();
-
-        //    sw.Start();
-        //    LinearSearch(array, target);
-        //    sw.Stop();
-        //    Console.WriteLine($"Array search time: {sw.ElapsedTicks} ticks");
-
-        //    sw.Restart();
-        //    bst.Search(target);
-        //    sw.Stop();
-        //    Console.WriteLine($"Binary Tree search time: {sw.ElapsedTicks} ticks");
-
-        //    sw.Restart();
-        //    sll.Search(target);
-        //    sw.Stop();
-        //    Console.WriteLine($"Singly Linked List search time: {sw.ElapsedTicks} ticks");
-        //}
-
         public static void Application(int numberOfStudents)
         {
             Console.WriteLine($"Loading {numberOfStudents} students... ");

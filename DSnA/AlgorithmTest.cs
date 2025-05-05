@@ -11,36 +11,6 @@ namespace DSnA
     // Riley contributed this code
     public class AlgorithmTest
     {
-        //public static void Performance(int size)
-        //{
-        //    Console.WriteLine($"Sorting an array of {size} integers: ");
-
-        //    int[] bubbleArray = GenerateRandomArray(size);
-        //    int[] heapArray = (int[])bubbleArray.Clone();
-        //    int[] insertionArray = (int[])bubbleArray.Clone();
-        //    int[] mergeArray = (int[])bubbleArray.Clone();
-
-        //    Stopwatch stopwatch = Stopwatch.StartNew();
-        //    BubbleSorter.BubbleSort(bubbleArray);
-        //    stopwatch.Stop();
-        //    Console.WriteLine($"Bubble sort time: {stopwatch.ElapsedTicks} ticks");
-
-        //    stopwatch.Restart();
-        //    HeapSorter.HeapSort(heapArray);
-        //    stopwatch.Stop();
-        //    Console.WriteLine($"Heap sort time: {stopwatch.ElapsedTicks} ticks");
-
-        //    stopwatch.Restart();
-        //    InsertionSortTest.InsertionSortArray(insertionArray);
-        //    stopwatch.Stop();
-        //    Console.WriteLine($"Insertion sort time: {stopwatch.ElapsedTicks} ticks");
-
-        //    stopwatch.Restart();
-        //    MergeSorter.MergeSort(mergeArray);
-        //    stopwatch.Stop();
-        //    Console.WriteLine($"Merge sort time: {stopwatch.ElapsedTicks} ticks");
-        //}
-
         public static void Application(int numberOfProducts)
         {
             Console.WriteLine($"Loading {numberOfProducts} product prices...");

@@ -52,20 +52,6 @@ namespace DSnA
                 watch.Stop();
                 mergeArrTicks += watch.ElapsedTicks;
                 watch.Reset();
-
-                //watch.Start();
-                //InsertionSort.InsertionSortList(li);
-                //watch.Stop();
-                //insertionLiTicks += watch.ElapsedTicks;
-                //watch.Reset();
-
-                //SinglyLinkedList.Print(sll);
-                //Console.WriteLine("\n");
-                //watch.Start();
-                //InsertionSort.InsertionSortSLL(sll);
-                //watch.Stop();
-                //insertionSllTicks += watch.ElapsedTicks;
-                //watch.Reset();
             }
 
             double insertionArrAvg = insertionArrTicks / iterations;
