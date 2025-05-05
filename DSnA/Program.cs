@@ -8,22 +8,23 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            InsertionSort.InsertionSortCompare(10, 30000);
+            CompareAll.CompareAllSorts(100, 10000);
+            //InsertionSort.InsertionSortCompare(100, 10000);
 
-            // Riley contributed the code below this line
-            Console.WriteLine("Algorithms Performance Test\n");
-            AlgorithmTest.TestRun(10000);
-            AlgorithmTest.TestRun(20000);
+            //// Riley contributed the code below this line
+            //Console.WriteLine("Algorithms Performance Test\n");
+            //AlgorithmTest.TestRun(10000);
+            //AlgorithmTest.TestRun(20000);
 
-            Console.WriteLine("\nReal World Application\n");
-            AlgorithmTest.RealWorldApplication();
+            //Console.WriteLine("\nReal World Application\n");
+            //AlgorithmTest.RealWorldApplication();
 
-            Console.WriteLine("Data Structures Performance Test\n");
-            BinarySearchTreeTest.TestRun(10000);
-            BinarySearchTreeTest.TestRun(20000);
+            //Console.WriteLine("Data Structures Performance Test\n");
+            //BinarySearchTreeTest.TestRun(10000);
+            //BinarySearchTreeTest.TestRun(20000);
 
-            Console.WriteLine("\nReal World Application\n");
-            BinarySearchTreeTest.RealWorldApplication();
+            //Console.WriteLine("\nReal World Application\n");
+            //BinarySearchTreeTest.RealWorldApplication();
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 
