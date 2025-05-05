@@ -10,9 +10,9 @@ namespace DSnA
 {
     internal class DataStructuresTest
     {
-        public static void TestRun(int size)
+        public static void Performance(int size)
         {
-            Console.WriteLine($"Testing with {size} integers: ");
+            Console.WriteLine($"Searching in an array of {size} integers: ");
 
             int[] array = GenerateRandomArray(size);
             int[] treeArray = (int[])array.Clone();
@@ -35,14 +35,12 @@ namespace DSnA
             bool foundInTree = bst.Search(target);
             stopwatchTree.Stop();
             Console.WriteLine($"Binary Tree search time: {stopwatchTree.ElapsedTicks} ticks");
-
-            Console.WriteLine();
         }
 
-        public static void RealWorldApplication()
+        public static void Application()
         {
             int numberOfStudents = 50;
-            Console.WriteLine($"Loading {numberOfStudents} students: ");
+            Console.WriteLine($"Loading {numberOfStudents} students... ");
 
             int[] studentIDs = GenerateRandomArray(numberOfStudents);
             int[] treeIDs = (int[])studentIDs.Clone();
@@ -55,7 +53,7 @@ namespace DSnA
 
             Random random = new Random();
             int targetID = studentIDs[random.Next(studentIDs.Length)];
-            Console.WriteLine($"\nSearching for Student ID: {targetID}");
+            Console.WriteLine($"Searching for Student ID: {targetID}");
 
             Console.WriteLine("\nArray Linear Search:");
             Stopwatch stopwatchArray = Stopwatch.StartNew();

@@ -9,15 +9,8 @@ namespace DSnA.Algorithms
 {
     public class MergeSortTest
     { // Dominic's code
-        public static int[] MergeSort(int[] arr, bool continueStopWatch)
+        public static int[] MergeSort(int[] arr)
         {
-            Stopwatch sw = null;
-            if (continueStopWatch)
-            {
-                sw = new Stopwatch();
-                sw.Start();
-            }
-
             if (arr.Length == 1) return arr;
             int mid = arr.Length / 2;
 
@@ -27,13 +20,7 @@ namespace DSnA.Algorithms
             Array.Copy(arr, 0, arrLeft, 0, mid);
             Array.Copy(arr, mid, arrRight, 0, arr.Length - mid);
 
-            int[] sortedArray = Merge(MergeSort(arrLeft, false), MergeSort(arrRight, false));
-
-            if (continueStopWatch)
-            {
-                sw.Stop();
-                Console.WriteLine($"Merge sort with array length {arr.Length} completed. Elapsed time: {sw.Elapsed}");
-            }
+            int[] sortedArray = Merge(MergeSort(arrLeft), MergeSort(arrRight));
             return sortedArray;
         }
         private static int[] Merge(int[] arrLeft, int[] arrRight)

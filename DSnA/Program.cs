@@ -13,20 +13,20 @@ namespace DSnA
 
             // Riley and Dominic contributed the code below this line
             Console.WriteLine("Algorithms Performance Test --------------------------------------------------\n");
-            AlgorithmTest.TestRun(100);
+            AlgorithmTest.Performance(100);
             Console.WriteLine();
-            AlgorithmTest.TestRun(10000);
+            AlgorithmTest.Performance(10000);
 
-            Console.WriteLine("Algorithms Application Test --------------------------------------------------\n");
-            AlgorithmTest.RealWorldApplication();
+            Console.WriteLine("\nAlgorithms Application Test --------------------------------------------------\n");
+            AlgorithmTest.Application();
 
-            Console.WriteLine("Data Structures Performance Test ---------------------------------------------\n");
-            DataStructuresTest.TestRun(100);
+            Console.WriteLine("\nData Structures Performance Test ---------------------------------------------\n");
+            DataStructuresTest.Performance(100);
             Console.WriteLine();
-            DataStructuresTest.TestRun(10000);
+            DataStructuresTest.Performance(10000);
 
-            Console.WriteLine("Data Structures Application Test ---------------------------------------------\n");
-            DataStructuresTest.RealWorldApplication();
+            Console.WriteLine("\nData Structures Application Test ---------------------------------------------\n");
+            DataStructuresTest.Application();
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 

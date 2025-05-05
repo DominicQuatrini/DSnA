@@ -27,7 +27,6 @@ namespace DSnA.Algorithms
                 Heapify(array, i, 0);
             }
         }
-
         private static void Heapify(int[] array, int heapSize, int rootIndex)
         {
             int large = rootIndex;
@@ -38,12 +37,10 @@ namespace DSnA.Algorithms
             {
                 large = left;
             }
-
             if (right < heapSize && array[right] > array[large])
             {
                 large = right;
             }
-
             if (large != rootIndex)
             {
                 int swap = array[rootIndex];

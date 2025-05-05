@@ -11,9 +11,9 @@ namespace DSnA
     // Riley contributed this code
     public class AlgorithmTest
     {
-        public static void TestRun(int size)
+        public static void Performance(int size)
         {
-            Console.WriteLine($"Testing with {size} integers: ");
+            Console.WriteLine($"Sorting an array of {size} integers: ");
 
             int[] bubbleArray = GenerateRandomArray(size);
             int[] heapArray = (int[])bubbleArray.Clone();
@@ -36,41 +36,53 @@ namespace DSnA
             Console.WriteLine($"Insertion sort time: {stopwatch.ElapsedTicks} ticks");
 
             stopwatch.Restart();
-            MergeSortTest.MergeSort(mergeArray, true);
+            MergeSortTest.MergeSort(mergeArray);
             stopwatch.Stop();
             Console.WriteLine($"Merge sort time: {stopwatch.ElapsedTicks} ticks");
         }
 
-        public static void RealWorldApplication()
+        public static void Application()
         {
             int numberOfProducts = 200;
-            Console.WriteLine($"Loading {numberOfProducts} product prices: ");
+            Console.WriteLine($"Loading {numberOfProducts} product prices...");
 
+            Stopwatch stopwatch = new Stopwatch();
             int[] prices = GenerateRandomArray(numberOfProducts);
             int[] bubblePrices = (int[])prices.Clone();
             int[] heapPrices = (int[])prices.Clone();
 
-            Console.WriteLine("\nSorting prices using Bubble Sort: ");
-
-            Stopwatch stopwatchBubble = Stopwatch.StartNew();
+            Console.Write("\nSorting prices using Bubble Sort: ");
+            stopwatch.Start();
             BubbleSortTest.BubbleSort(bubblePrices);
-            stopwatchBubble.Stop();
-            Console.WriteLine($"Bubble Sort Time: {stopwatchBubble.ElapsedTicks} ticks");
-
-            Console.WriteLine("\nFive Cheapest Prices after Bubble Sort:");
+            stopwatch.Stop();
+            Console.WriteLine($"{stopwatch.ElapsedTicks} ticks");
+            Console.WriteLine("Five Cheapest Prices after Bubble Sort:");
             DisplayTop5Prices(bubblePrices);
 
-            Console.WriteLine("\nSorting prices using Heap Sort: ");
-
-            Stopwatch stopwatchHeap = Stopwatch.StartNew();
+            Console.Write("\nSorting prices using Heap Sort: ");
+            stopwatch.Restart();
             HeapSortTest.HeapSort(heapPrices);
-            stopwatchHeap.Stop();
-            Console.WriteLine($"Heap Sort Time: {stopwatchHeap.ElapsedTicks} ticks");
+            stopwatch.Stop();
+            Console.WriteLine($"{stopwatch.ElapsedTicks} ticks");
+            Console.WriteLine("Five Cheapest Prices after Heap Sort:");
+            DisplayTop5Prices(heapPrices);
 
-            Console.WriteLine("\nFive Cheapest Prices after Heap Sort:");
+            Console.Write("\nSorting prices using Insertion Sort: ");
+            stopwatch.Restart();
+            InsertionSortTest.InsertionSort(heapPrices);
+            stopwatch.Stop();
+            Console.WriteLine($"{stopwatch.ElapsedTicks} ticks");
+            Console.WriteLine("Five Cheapest Prices after Insertion Sort:");
+            DisplayTop5Prices(heapPrices);
+
+            Console.Write("\nSorting prices using Merge Sort: ");
+            stopwatch.Restart();
+            MergeSortTest.MergeSort(heapPrices);
+            stopwatch.Stop();
+            Console.WriteLine($"{stopwatch.ElapsedTicks} ticks");
+            Console.WriteLine("Five Cheapest Prices after Merge Sort:");
             DisplayTop5Prices(heapPrices);
         }
-
         static int[] GenerateRandomArray(int size)
         {
             Random random = new Random();
@@ -81,7 +93,6 @@ namespace DSnA
             }
             return array;
         }
-
         static void DisplayTop5Prices(int[] prices)
         {
             for (int i = 0; i < Math.Min(5, prices.Length); i++)
