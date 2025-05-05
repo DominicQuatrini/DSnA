@@ -43,19 +43,19 @@ namespace DSnA
                 //SinglyLinkedList sll = SinglyLinkedList.CreateListFromArray(insertionArr);
 
                 watch.Start();
-                InsertionSort.InsertionSortArray(insertionArr);
+                Algorithms.InsertionSortTest.InsertionSort(insertionArr);
                 watch.Stop();
                 insertionArrTicks += watch.ElapsedTicks;
                 watch.Reset();
 
                 watch.Start();
-                BubbleSortTest.BubbleSort(bubbleArr);
+                Algorithms.BubbleSortTest.BubbleSort(bubbleArr);
                 watch.Stop();
                 bubbleArrTicks += watch.ElapsedTicks;
                 watch.Reset();
 
                 watch.Start();
-                HeapSortTest.HeapSort(heapArr);
+                Algorithms.HeapSortTest.HeapSort(heapArr);
                 watch.Stop();
                 heapArrTicks += watch.ElapsedTicks;
                 watch.Reset();

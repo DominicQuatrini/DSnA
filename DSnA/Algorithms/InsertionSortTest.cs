@@ -6,11 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 
-namespace DSnA
+namespace DSnA.Algorithms
 {
-    public class InsertionSort
+    public class InsertionSortTest
     {
+        public static void InsertionSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 1; i < n; i++)
+            {
+                int key = arr[i];
+                int j = i - 1;
+                while (j >= 0 && arr[j] > key)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+                arr[j + 1] = key;
+            }
+        }
         //[Benchmark]
+        /*
         public static void InsertionSortCompare(int iterations, int size)
         {
             Stopwatch watch = new Stopwatch();
@@ -86,22 +102,7 @@ namespace DSnA
         }
 
         [Benchmark]
-        public static void InsertionSortArray(int[] arr)
-        {
-            int n = arr.Length;
-            for (int i = 1; i < n; i++)
-            {
-                int key = arr[i];
-                int j = i - 1;
-                while (j >= 0 && arr[j] > key)
-                {
-                    arr[j + 1] = arr[j];
-                    j--;
-                }
-                arr[j + 1] = key;
-            }
-        }
-
+        
         [Benchmark]
         // SLL = Singly Linked List
         public static void InsertionSortSLL(SinglyLinkedList sll)
@@ -168,6 +169,6 @@ namespace DSnA
             Console.WriteLine("Objects are not comparable.");
             throw new ArgumentException($"Objects are not comparable. \n" +
                 $"\"Comparing {{current.Data}} (type: {{current.Data.GetType()}}) with {{sorted.Data}} (type: {{sorted.Data.GetType()}})");
-        }
+        }*/
     }
 }

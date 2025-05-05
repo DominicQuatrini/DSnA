@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Running;
+using DSnA.DataStructures;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using System.Diagnostics;
 
@@ -8,23 +9,21 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            CompareAll.CompareAllSorts(100, 20000);
-            //InsertionSort.InsertionSortCompare(100, 10000);
+            Console.WriteLine("Algorithms Performance Test --------------------------------------------------\n");
+            AlgorithmTest.Performance(100);
+            Console.WriteLine();
+            AlgorithmTest.Performance(10000);
 
-            //// Riley contributed the code below this line
-            //Console.WriteLine("Algorithms Performance Test\n");
-            //AlgorithmTest.TestRun(10000);
-            //AlgorithmTest.TestRun(20000);
+            Console.WriteLine("\nAlgorithms Application Test --------------------------------------------------\n");
+            AlgorithmTest.Application(200);
 
-            //Console.WriteLine("\nReal World Application\n");
-            //AlgorithmTest.RealWorldApplication();
+            Console.WriteLine("\nData Structures Performance Test ---------------------------------------------\n");
+            DataStructuresTest.Performance(100);
+            Console.WriteLine();
+            DataStructuresTest.Performance(10000);
 
-            //Console.WriteLine("Data Structures Performance Test\n");
-            //BinarySearchTreeTest.TestRun(10000);
-            //BinarySearchTreeTest.TestRun(20000);
-
-            //Console.WriteLine("\nReal World Application\n");
-            //BinarySearchTreeTest.RealWorldApplication();
+            Console.WriteLine("\nData Structures Application Test ---------------------------------------------\n");
+            DataStructuresTest.Application(50);
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 

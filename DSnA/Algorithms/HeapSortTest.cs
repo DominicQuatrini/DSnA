@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSnA
+namespace DSnA.Algorithms
 {
     // Riley contributed this code
     public static class HeapSortTest
@@ -27,7 +27,6 @@ namespace DSnA
                 Heapify(array, i, 0);
             }
         }
-
         private static void Heapify(int[] array, int heapSize, int rootIndex)
         {
             int large = rootIndex;
@@ -38,12 +37,10 @@ namespace DSnA
             {
                 large = left;
             }
-
             if (right < heapSize && array[right] > array[large])
             {
                 large = right;
             }
-
             if (large != rootIndex)
             {
                 int swap = array[rootIndex];
