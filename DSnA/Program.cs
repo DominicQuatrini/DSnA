@@ -8,7 +8,7 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            CompareAll.CompareAllSorts(100, 10000);
+            CompareAll.CompareAllSorts(100, 20000);
             //InsertionSort.InsertionSortCompare(100, 10000);
 
             //// Riley contributed the code below this line

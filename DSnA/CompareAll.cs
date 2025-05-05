@@ -82,12 +82,18 @@ namespace DSnA
             Console.WriteLine($"Total time to sort a randomized sample of {size} numbers {iterations} times with: ");
             Console.WriteLine($"\t\tINSERTION SORT: {insertionArrTicks} ticks");
             Console.WriteLine($"\t\tBUBBLE SORT: {bubbleArrTicks} ticks");
-            Console.WriteLine($"\t\tHEAP SORT: {heapArrTicks} ticks");
+            Console.WriteLine($"\t\tHEAP SORT: {heapArrTicks} ticks\n");
 
             Console.WriteLine($"AVERAGE time to sort {size} numbers with: ");
             Console.WriteLine($"\t\tINSERTION SORT: {insertionArrAvg} ticks");
             Console.WriteLine($"\t\tBUBBLE SORT: {bubbleArrAvg} ticks");
-            Console.WriteLine($"\t\tHEAP SORT: {heapArrAvg} ticks");
+            Console.WriteLine($"\t\tHEAP SORT: {heapArrAvg} ticks\n");
+
+            double percentInsertionBubble = 100 * (insertionArrAvg / bubbleArrAvg);
+            double percentInsertionHeap = 100 * (insertionArrAvg / heapArrAvg);
+
+            Console.WriteLine($"Insertion Sort took {percentInsertionBubble}% as much time to perform as Bubble Sort.");
+            Console.WriteLine($"Insertion Sort took {percentInsertionHeap}% as long to perform as Heap Sort.");
 
         }
 
