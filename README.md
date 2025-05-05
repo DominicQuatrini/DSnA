@@ -2,7 +2,7 @@
 
 ## This is the final project for Data Structures and Algorithms
 
-### Contributers: Riley, Ege, Dominic, CJ
+### Contributers: Riley, Ege, Dominic, Chris (CJ)
 
 Packages used: NUnit, BenchmarkDotNet
 
