@@ -9,16 +9,13 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            //InsertionSort.InsertionSortCompare(10, 30000);
-
-            // Riley and Dominic contributed the code below this line
             Console.WriteLine("Algorithms Performance Test --------------------------------------------------\n");
             AlgorithmTest.Performance(100);
             Console.WriteLine();
             AlgorithmTest.Performance(10000);
 
             Console.WriteLine("\nAlgorithms Application Test --------------------------------------------------\n");
-            AlgorithmTest.Application();
+            AlgorithmTest.Application(200);
 
             Console.WriteLine("\nData Structures Performance Test ---------------------------------------------\n");
             DataStructuresTest.Performance(100);
@@ -26,7 +23,7 @@ namespace DSnA
             DataStructuresTest.Performance(10000);
 
             Console.WriteLine("\nData Structures Application Test ---------------------------------------------\n");
-            DataStructuresTest.Application();
+            DataStructuresTest.Application(50);
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 

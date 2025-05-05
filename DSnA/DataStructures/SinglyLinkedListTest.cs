@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSnA.DataStructures
 {
-    public class SinglyLinkedList
+    public class SinglyLinkedListTest
     {
 
         public class Node
@@ -42,9 +42,9 @@ namespace DSnA.DataStructures
             }
         }
 
-        public static SinglyLinkedList CreateListFromArray(int[] arr)
+        public static SinglyLinkedListTest CreateListFromArray(int[] arr)
         {
-            SinglyLinkedList sll = new SinglyLinkedList();
+            SinglyLinkedListTest sll = new SinglyLinkedListTest();
             foreach (var item in arr.Reverse())  // Reverse to insert at the beginning
             {
                 sll.InsertFirst(item);
@@ -52,10 +52,10 @@ namespace DSnA.DataStructures
             return sll;
         }
 
-        public static SinglyLinkedList CreateRandSLL(int size, int range)
+        public static SinglyLinkedListTest CreateRandSLL(int size, int range)
         {
             Random rand = new Random();
-            SinglyLinkedList list = new SinglyLinkedList();
+            SinglyLinkedListTest list = new SinglyLinkedListTest();
 
             if (size <= 0) return list;
 
@@ -72,7 +72,7 @@ namespace DSnA.DataStructures
             return list;
         }
 
-        public static void Print(SinglyLinkedList sll)
+        public static void Print(SinglyLinkedListTest sll)
         {
             if (sll.IsEmpty()) { Console.WriteLine("List is empty"); return; }
             Node temp = sll.root;

@@ -40,10 +40,8 @@ namespace DSnA
             stopwatch.Stop();
             Console.WriteLine($"Merge sort time: {stopwatch.ElapsedTicks} ticks");
         }
-
-        public static void Application()
+        public static void Application(int numberOfProducts)
         {
-            int numberOfProducts = 200;
             Console.WriteLine($"Loading {numberOfProducts} product prices...");
 
             Stopwatch stopwatch = new Stopwatch();

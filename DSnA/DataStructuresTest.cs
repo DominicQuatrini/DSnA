@@ -36,20 +36,22 @@ namespace DSnA
             stopwatchTree.Stop();
             Console.WriteLine($"Binary Tree search time: {stopwatchTree.ElapsedTicks} ticks");
         }
-
-        public static void Application()
+        public static void Application(int numberOfStudents)
         {
-            int numberOfStudents = 50;
             Console.WriteLine($"Loading {numberOfStudents} students... ");
 
             int[] studentIDs = GenerateRandomArray(numberOfStudents);
-            int[] treeIDs = (int[])studentIDs.Clone();
 
             BinarySearchTreeTest studentTree = new BinarySearchTreeTest();
-            foreach (int id in treeIDs)
+            foreach (int id in studentIDs)
             {
                 studentTree.Insert(id);
             }
+
+            SinglyLinkedListTest sll = new SinglyLinkedListTest();
+            SinglyLinkedListTest.Node[] nodeArr = new SinglyLinkedListTest.Node[numberOfStudents];
+            for (int i = 0; i < studentIDs.Length; i++)
+                nodeArr[i] = new SinglyLinkedListTest.Node(studentIDs[i]);
 
             Random random = new Random();
             int targetID = studentIDs[random.Next(studentIDs.Length)];
@@ -69,7 +71,6 @@ namespace DSnA
             Console.WriteLine($"Binary Search Tree time: {stopwatchTree.ElapsedTicks} ticks");
             Console.WriteLine($"Student ID found in tree: {foundInTree}");
         }
-
         static int[] GenerateRandomArray(int size)
         {
             Random random = new Random();
@@ -80,7 +81,6 @@ namespace DSnA
             }
             return array;
         }
-
         public static bool LinearSearch(int[] array, int key)
         {
             foreach (int value in array)
