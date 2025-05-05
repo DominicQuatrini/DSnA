@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DSnA.Algorithms
 {
     // Riley contributed this code
-    public static class HeapSortTest
+    public static class HeapSorter
     {
         public static void HeapSort(int[] array)
         {

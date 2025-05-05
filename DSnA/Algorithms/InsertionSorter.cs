@@ -8,7 +8,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace DSnA.Algorithms
 {
-    public class InsertionSortTest
+    public class InsertionSorter
     {
         public static void InsertionSort(int[] arr)
         {
