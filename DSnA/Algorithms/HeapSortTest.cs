@@ -27,6 +27,7 @@ namespace DSnA.Algorithms
                 Heapify(array, i, 0);
             }
         }
+
         private static void Heapify(int[] array, int heapSize, int rootIndex)
         {
             int large = rootIndex;

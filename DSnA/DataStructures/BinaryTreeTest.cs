@@ -19,7 +19,8 @@ namespace DSnA.DataStructures
             Left = Right = null;
         }
     }
-    public class BinarySearchTreeTest
+
+    public class BinaryTreeTest
     {
         private BSNode root;
         private Random random = new Random();

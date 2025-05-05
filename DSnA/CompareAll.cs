@@ -43,7 +43,7 @@ namespace DSnA
                 //SinglyLinkedList sll = SinglyLinkedList.CreateListFromArray(insertionArr);
 
                 watch.Start();
-                Algorithms.InsertionSortTest.InsertionSort(insertionArr);
+                Algorithms.InsertionSortTest.InsertionSortArray(insertionArr);
                 watch.Stop();
                 insertionArrTicks += watch.ElapsedTicks;
                 watch.Reset();

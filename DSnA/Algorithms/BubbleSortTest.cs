@@ -25,6 +25,7 @@ namespace DSnA.Algorithms
                 }
             }
         }
+
         static void Swap(ref int a, ref int b)
         {
             int temp = 0;
@@ -32,6 +33,7 @@ namespace DSnA.Algorithms
             a = b;
             b = temp;
         }
+
         static void printAll(int[] arr)
         {
             foreach (var element in arr)
