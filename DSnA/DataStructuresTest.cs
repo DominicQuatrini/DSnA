@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DSnA
 {
+    // 
     internal class DataStructuresTest
     {
         public static void Performance(int size)
@@ -44,6 +45,7 @@ namespace DSnA
             sw.Stop();
             Console.WriteLine($"Singly Linked List search time: {sw.ElapsedTicks} ticks");
         }
+
         public static void Application(int numberOfStudents)
         {
             Console.WriteLine($"Loading {numberOfStudents} students... ");
@@ -84,6 +86,7 @@ namespace DSnA
             Console.WriteLine($"Singly Linked List time: {sw.ElapsedTicks} ticks");
             Console.WriteLine($"Student ID found in tree: {foundInTree}");
         }
+
         static int[] GenerateRandomArray(int size)
         {
             Random random = new Random();
@@ -94,6 +97,7 @@ namespace DSnA
             }
             return array;
         }
+
         public static bool LinearSearch(int[] array, int key)
         {
             foreach (int value in array)

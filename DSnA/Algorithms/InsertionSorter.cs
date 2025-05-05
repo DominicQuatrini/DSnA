@@ -8,9 +8,10 @@ using BenchmarkDotNet.Attributes;
 
 namespace DSnA.Algorithms
 {
-    public class InsertionSorter
+    // Chris contributed this code
+    public class InsertionSortTest
     {
-        public static void InsertionSort(int[] arr)
+        public static void InsertionSortArray(int[] arr)
         {
             int n = arr.Length;
             for (int i = 1; i < n; i++)
@@ -25,8 +26,8 @@ namespace DSnA.Algorithms
                 arr[j + 1] = key;
             }
         }
+
         //[Benchmark]
-        /*
         public static void InsertionSortCompare(int iterations, int size)
         {
             Stopwatch watch = new Stopwatch();
@@ -45,7 +46,7 @@ namespace DSnA.Algorithms
                 }
 
                 List<int> li = arr.ToList();
-                SinglyLinkedList sll = SinglyLinkedList.CreateListFromArray(arr);
+                DataStructures.SinglyLinkedListTest sll = DataStructures.SinglyLinkedListTest.CreateListFromArray(arr);
 
                 watch.Start();
                 InsertionSortArray(arr);
@@ -59,8 +60,8 @@ namespace DSnA.Algorithms
                 liTime += Convert.ToInt32(watch.ElapsedTicks);
                 watch.Reset();
 
-                //SinglyLinkedList.Print(sll);
-                //Console.WriteLine("\n");
+                DataStructures.SinglyLinkedListTest.Print(sll);
+                Console.WriteLine("\n");
                 watch.Start();
                 InsertionSortSLL(sll);
                 watch.Stop();
@@ -101,20 +102,20 @@ namespace DSnA.Algorithms
             }
         }
 
-        [Benchmark]
+        //[Benchmark]
         
-        [Benchmark]
+        // [Benchmark]
         // SLL = Singly Linked List
-        public static void InsertionSortSLL(SinglyLinkedList sll)
+        public static void InsertionSortSLL(DataStructures.SinglyLinkedListTest sll)
         {
             if (sll.IsEmpty() || sll.Count() <= 1 || sll.First == null) { return; }
 
-            SinglyLinkedList.Node sorted = null; // keep track of the sorted portion
-            SinglyLinkedList.Node current = sll.First;
+            DataStructures.SinglyLinkedListTest.Node sorted = null; // keep track of the sorted portion
+            DataStructures.SinglyLinkedListTest.Node current = sll.First;
 
             while (current != null)
             {
-                SinglyLinkedList.Node next = current.Next;
+                DataStructures.SinglyLinkedListTest.Node next = current.Next;
 
                 // Only print the comparison if sorted is not null
                 if (sorted != null)
@@ -133,7 +134,7 @@ namespace DSnA.Algorithms
                 }
                 else
                 {
-                    SinglyLinkedList.Node temp = sorted;
+                    DataStructures.SinglyLinkedListTest.Node temp = sorted;
                     while (temp.Next != null && Compare(temp.Next.Data, current.Data) < 0)
                     {
                         temp = temp.Next;
@@ -169,6 +170,6 @@ namespace DSnA.Algorithms
             Console.WriteLine("Objects are not comparable.");
             throw new ArgumentException($"Objects are not comparable. \n" +
                 $"\"Comparing {{current.Data}} (type: {{current.Data.GetType()}}) with {{sorted.Data}} (type: {{sorted.Data.GetType()}})");
-        }*/
+        }
     }
 }

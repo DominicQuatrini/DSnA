@@ -11,7 +11,12 @@
             Left = Right = null;
         }
     }
+<<<<<<<< HEAD:DSnA/DataStructures/BinarySearchTree.cs
     public class BinarySearchTree
+========
+
+    public class BinaryTreeTest
+>>>>>>>> e032231da2c1234298f8e9efffe75e1aa9113744:DSnA/DataStructures/BinaryTreeTest.cs
     {
         private Node root;
         private Random random = new Random();

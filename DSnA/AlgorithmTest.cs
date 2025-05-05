@@ -31,7 +31,7 @@ namespace DSnA
             Console.WriteLine($"Heap sort time: {stopwatch.ElapsedTicks} ticks");
 
             stopwatch.Restart();
-            InsertionSorter.InsertionSort(insertionArray);
+            InsertionSortTest.InsertionSortArray(insertionArray);
             stopwatch.Stop();
             Console.WriteLine($"Insertion sort time: {stopwatch.ElapsedTicks} ticks");
 
@@ -40,6 +40,7 @@ namespace DSnA
             stopwatch.Stop();
             Console.WriteLine($"Merge sort time: {stopwatch.ElapsedTicks} ticks");
         }
+
         public static void Application(int numberOfProducts)
         {
             Console.WriteLine($"Loading {numberOfProducts} product prices...");
@@ -67,7 +68,7 @@ namespace DSnA
 
             Console.Write("\nSorting prices using Insertion Sort: ");
             stopwatch.Restart();
-            InsertionSorter.InsertionSort(heapPrices);
+            InsertionSortTest.InsertionSortArray(heapPrices);
             stopwatch.Stop();
             Console.WriteLine($"{stopwatch.ElapsedTicks} ticks");
             Console.WriteLine("Five Cheapest Prices after Insertion Sort:");
@@ -81,6 +82,7 @@ namespace DSnA
             Console.WriteLine("Five Cheapest Prices after Merge Sort:");
             DisplayTop5Prices(heapPrices);
         }
+
         static int[] GenerateRandomArray(int size)
         {
             Random random = new Random();
@@ -91,6 +93,7 @@ namespace DSnA
             }
             return array;
         }
+
         static void DisplayTop5Prices(int[] prices)
         {
             for (int i = 0; i < Math.Min(5, prices.Length); i++)
