@@ -34,13 +34,13 @@ namespace DSnA
                 watch.Start();
                 InsertionSortArray(arr);
                 watch.Stop();
-                arrTime += Convert.ToInt32(watch.ElapsedMilliseconds);
+                arrTime += Convert.ToInt32(watch.ElapsedTicks);
                 watch.Reset();
 
                 watch.Start();
                 InsertionSortList(li);
                 watch.Stop();
-                liTime += Convert.ToInt32(watch.ElapsedMilliseconds);
+                liTime += Convert.ToInt32(watch.ElapsedTicks);
                 watch.Reset();
 
                 //SinglyLinkedList.Print(sll);
@@ -48,7 +48,7 @@ namespace DSnA
                 watch.Start();
                 InsertionSortSLL(sll);
                 watch.Stop();
-                sllTime += Convert.ToInt32(watch.ElapsedMilliseconds);
+                sllTime += Convert.ToInt32(watch.ElapsedTicks);
                 watch.Reset();
                 //SinglyLinkedList.Print(sll);
                 //Console.WriteLine("\n\n\n");
@@ -59,14 +59,14 @@ namespace DSnA
             double sllAvg = sllTime / iterations;
 
             Console.WriteLine($"Total time to sort a randomized sample of {size} numbers {iterations} times in an: ");
-            Console.WriteLine($"\t\tARRAY: {arrTime} ms");
-            Console.WriteLine($"\t\tLIST: {liTime} ms");
-            Console.WriteLine($"\t\tSINGLY LINKED LIST: {sllTime} ms");
+            Console.WriteLine($"\t\tARRAY: {arrTime} ticks");
+            Console.WriteLine($"\t\tLIST: {liTime} ticks");
+            Console.WriteLine($"\t\tSINGLY LINKED LIST: {sllTime} ticks");
 
             Console.WriteLine($"AVERAGE time to sort {size} numbers {iterations} times in an: ");
-            Console.WriteLine($"\t\tARRAY: {arrAvg} ms");
-            Console.WriteLine($"\t\tLIST: {liAvg} ms");
-            Console.WriteLine($"\t\tSINGLY LINKED LIST: {sllAvg} ms");
+            Console.WriteLine($"\t\tARRAY: {arrAvg} ticks");
+            Console.WriteLine($"\t\tLIST: {liAvg} ticks");
+            Console.WriteLine($"\t\tSINGLY LINKED LIST: {sllAvg} ticks");
         }
 
         [Benchmark]
