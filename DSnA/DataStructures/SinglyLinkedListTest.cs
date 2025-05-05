@@ -109,6 +109,18 @@ namespace DSnA.DataStructures
             }
             return temp;
         }
+        public bool Search(object a)
+        {
+            Node? temp = root;
+            bool found = false;
+            while (temp != null)
+            {
+                if (temp.Data != a)
+                    found = true;
+                temp = temp.Next;
+            }
+            return found;
+        }
 
         public int Count()
         {

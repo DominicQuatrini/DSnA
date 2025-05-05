@@ -15,26 +15,34 @@ namespace DSnA
             Console.WriteLine($"Searching in an array of {size} integers: ");
 
             int[] array = GenerateRandomArray(size);
-            int[] treeArray = (int[])array.Clone();
 
             BinarySearchTreeTest bst = new BinarySearchTreeTest();
-            foreach (int value in treeArray)
+            foreach (int value in array)
             {
                 bst.Insert(value);
             }
+            SinglyLinkedListTest sll = new SinglyLinkedListTest();
+            for (int i = 0; i < array.Length; i++)
+                sll.InsertFirst(array[i]);
 
             Random random = new Random();
             int target = array[random.Next(array.Length)];
+            Stopwatch sw = new Stopwatch();
 
-            Stopwatch stopwatchArray = Stopwatch.StartNew();
-            bool foundInArray = LinearSearch(array, target);
-            stopwatchArray.Stop();
-            Console.WriteLine($"Array search time: {stopwatchArray.ElapsedTicks} ticks");
+            sw.Start();
+            LinearSearch(array, target);
+            sw.Stop();
+            Console.WriteLine($"Array search time: {sw.ElapsedTicks} ticks");
 
-            Stopwatch stopwatchTree = Stopwatch.StartNew();
-            bool foundInTree = bst.Search(target);
-            stopwatchTree.Stop();
-            Console.WriteLine($"Binary Tree search time: {stopwatchTree.ElapsedTicks} ticks");
+            sw.Restart();
+            bst.Search(target);
+            sw.Stop();
+            Console.WriteLine($"Binary Tree search time: {sw.ElapsedTicks} ticks");
+
+            sw.Restart();
+            sll.Search(target);
+            sw.Stop();
+            Console.WriteLine($"Singly Linked List search time: {sw.ElapsedTicks} ticks");
         }
         public static void Application(int numberOfStudents)
         {
@@ -44,31 +52,36 @@ namespace DSnA
 
             BinarySearchTreeTest studentTree = new BinarySearchTreeTest();
             foreach (int id in studentIDs)
-            {
                 studentTree.Insert(id);
-            }
 
             SinglyLinkedListTest sll = new SinglyLinkedListTest();
-            SinglyLinkedListTest.Node[] nodeArr = new SinglyLinkedListTest.Node[numberOfStudents];
             for (int i = 0; i < studentIDs.Length; i++)
-                nodeArr[i] = new SinglyLinkedListTest.Node(studentIDs[i]);
+                sll.InsertFirst(studentIDs[i]);
 
             Random random = new Random();
             int targetID = studentIDs[random.Next(studentIDs.Length)];
             Console.WriteLine($"Searching for Student ID: {targetID}");
+            Stopwatch sw = new Stopwatch();
 
             Console.WriteLine("\nArray Linear Search:");
-            Stopwatch stopwatchArray = Stopwatch.StartNew();
-            bool foundinArray = LinearSearch(studentIDs, targetID);
-            stopwatchArray.Stop();
-            Console.WriteLine($"Array Search Time: {stopwatchArray.ElapsedTicks} ticks");
-            Console.WriteLine($"Student ID found in array: {foundinArray}");
+            sw.Start();
+            bool foundInArray = LinearSearch(studentIDs, targetID);
+            sw.Stop();
+            Console.WriteLine($"Array Search Time: {sw.ElapsedTicks} ticks");
+            Console.WriteLine($"Student ID found in array: {foundInArray}");
 
             Console.WriteLine("\nBinary Search Tree:");
-            Stopwatch stopwatchTree = Stopwatch.StartNew();
+            sw.Restart();
             bool foundInTree = studentTree.Search(targetID);
-            stopwatchTree.Stop();
-            Console.WriteLine($"Binary Search Tree time: {stopwatchTree.ElapsedTicks} ticks");
+            sw.Stop();
+            Console.WriteLine($"Binary Search Tree time: {sw.ElapsedTicks} ticks");
+            Console.WriteLine($"Student ID found in tree: {foundInTree}");
+
+            Console.WriteLine("\nSingly Linked List:");
+            sw.Restart();
+            bool foundInList = sll.Search(targetID);
+            sw.Stop();
+            Console.WriteLine($"Singly Linked List time: {sw.ElapsedTicks} ticks");
             Console.WriteLine($"Student ID found in tree: {foundInTree}");
         }
         static int[] GenerateRandomArray(int size)
