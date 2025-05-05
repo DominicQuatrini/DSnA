@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DSnA.DataStructures
 {
     // contributed by Chris
-    public class SinglyLinkedListTest
+    public class SinglyLinkedList
     {
 
         public class Node

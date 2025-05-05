@@ -46,7 +46,7 @@ namespace DSnA.Algorithms
                 }
 
                 List<int> li = arr.ToList();
-                DataStructures.SinglyLinkedListTest sll = DataStructures.SinglyLinkedListTest.CreateListFromArray(arr);
+                DataStructures.SinglyLinkedList sll = DataStructures.SinglyLinkedList.CreateListFromArray(arr);
 
                 watch.Start();
                 InsertionSortArray(arr);
@@ -60,7 +60,7 @@ namespace DSnA.Algorithms
                 liTime += Convert.ToInt32(watch.ElapsedTicks);
                 watch.Reset();
 
-                DataStructures.SinglyLinkedListTest.Print(sll);
+                DataStructures.SinglyLinkedList.Print(sll);
                 Console.WriteLine("\n");
                 watch.Start();
                 InsertionSortSLL(sll);
@@ -106,16 +106,16 @@ namespace DSnA.Algorithms
         
         // [Benchmark]
         // SLL = Singly Linked List
-        public static void InsertionSortSLL(DataStructures.SinglyLinkedListTest sll)
+        public static void InsertionSortSLL(DataStructures.SinglyLinkedList sll)
         {
             if (sll.IsEmpty() || sll.Count() <= 1 || sll.First == null) { return; }
 
-            DataStructures.SinglyLinkedListTest.Node sorted = null; // keep track of the sorted portion
-            DataStructures.SinglyLinkedListTest.Node current = sll.First;
+            DataStructures.SinglyLinkedList.Node sorted = null; // keep track of the sorted portion
+            DataStructures.SinglyLinkedList.Node current = sll.First;
 
             while (current != null)
             {
-                DataStructures.SinglyLinkedListTest.Node next = current.Next;
+                DataStructures.SinglyLinkedList.Node next = current.Next;
 
                 // Only print the comparison if sorted is not null
                 if (sorted != null)
@@ -134,7 +134,7 @@ namespace DSnA.Algorithms
                 }
                 else
                 {
-                    DataStructures.SinglyLinkedListTest.Node temp = sorted;
+                    DataStructures.SinglyLinkedList.Node temp = sorted;
                     while (temp.Next != null && Compare(temp.Next.Data, current.Data) < 0)
                     {
                         temp = temp.Next;
