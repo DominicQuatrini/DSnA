@@ -8,7 +8,7 @@ Packages used: NUnit, BenchmarkDotNet
 
 We chose to use Array, Singly Linked List, and Binary Search Tree as our data structures
 
-Our algorithms are Bubble Sort, Insertion Sort, and Merge Sort
+Our algorithms are Bubble Sort, Insertion Sort, Heap Sort, and Merge Sort
 
 We will compare the performance of each algorithm using a randomized selection of each data structure.
 
