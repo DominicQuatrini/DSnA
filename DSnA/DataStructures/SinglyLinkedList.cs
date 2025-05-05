@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSnA
+namespace DSnA.DataStructures
 {
     public class SinglyLinkedList
     {
@@ -16,14 +16,14 @@ namespace DSnA
 
             public Node(Node? next, object data)
             {
-                this.Next = next;
-                this.Data = data;
+                Next = next;
+                Data = data;
             }
 
             public Node(object data)
             {
-                this.Next = null;
-                this.Data = data;
+                Next = null;
+                Data = data;
             }
         }
 
@@ -85,12 +85,12 @@ namespace DSnA
 
         public Node? FindParent(Node a)
         {
-            if (this.IsEmpty())
+            if (IsEmpty())
             {
                 Console.WriteLine("Empty list or no root");
                 return null;
             }
-            Node? temp = this.root;
+            Node? temp = root;
             while (temp.Next.Data != a.Data)
             {
                 if (temp == null) { Console.WriteLine($"Couldn't find {a.Data}'s parent"); }
@@ -101,7 +101,7 @@ namespace DSnA
 
         public Node Find(Node a)
         {
-            Node? temp = this.root;
+            Node? temp = root;
             while (temp.Data != a.Data)
             {
                 temp = temp.Next;
@@ -112,7 +112,7 @@ namespace DSnA
 
         public int Count()
         {
-            if (this.IsEmpty())
+            if (IsEmpty())
             {
                 Console.WriteLine("Empty list or no root");
                 return -1;
@@ -136,7 +136,7 @@ namespace DSnA
 
         public bool IsEmpty()
         {
-            if (this.root == null) { return true; }
+            if (root == null) { return true; }
             else { return false; }
         }
 
@@ -144,7 +144,7 @@ namespace DSnA
         {
             Node insertThisNode = new Node(toBeInserted);
 
-            if (this.root == null) { this.root = insertThisNode; }
+            if (root == null) { root = insertThisNode; }
             else
             {
                 Node? root = this.root;
@@ -157,9 +157,9 @@ namespace DSnA
         {
             Node last = new Node(newLastValue);
 
-            if (this.IsEmpty()) { this.root = last; return; }
+            if (IsEmpty()) { root = last; return; }
 
-            Node? temp = this.root;
+            Node? temp = root;
             while (temp.Next != null)
             {
                 temp = temp.Next;
@@ -172,7 +172,7 @@ namespace DSnA
         {
 
             //Node insertThisNode = new(toBeInsertedValue);
-            if (this.IsEmpty())
+            if (IsEmpty())
             {
                 throw new InvalidOperationException($"The list is null");
             }

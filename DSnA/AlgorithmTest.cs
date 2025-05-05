@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSnA.Algorithms;
 
 namespace DSnA
 {
@@ -16,6 +17,8 @@ namespace DSnA
 
             int[] bubbleArray = GenerateRandomArray(size);
             int[] heapArray = (int[])bubbleArray.Clone();
+            int[] insertionArray = (int[])bubbleArray.Clone();
+            int[] mergeArray = (int[])bubbleArray.Clone();
 
             Stopwatch stopwatch = Stopwatch.StartNew();
             BubbleSortTest.BubbleSort(bubbleArray);
@@ -27,7 +30,15 @@ namespace DSnA
             stopwatch.Stop();
             Console.WriteLine($"Heap sort time: {stopwatch.ElapsedTicks} ticks");
 
-            Console.WriteLine();
+            stopwatch.Restart();
+            InsertionSortTest.InsertionSort(insertionArray);
+            stopwatch.Stop();
+            Console.WriteLine($"Insertion sort time: {stopwatch.ElapsedTicks} ticks");
+
+            stopwatch.Restart();
+            MergeSortTest.MergeSort(mergeArray, true);
+            stopwatch.Stop();
+            Console.WriteLine($"Merge sort time: {stopwatch.ElapsedTicks} ticks");
         }
 
         public static void RealWorldApplication()

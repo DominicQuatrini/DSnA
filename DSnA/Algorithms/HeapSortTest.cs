@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSnA
+namespace DSnA.Algorithms
 {
     // Riley contributed this code
     public static class HeapSortTest

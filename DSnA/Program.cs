@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Running;
+using DSnA.DataStructures;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using System.Diagnostics;
 
@@ -8,22 +9,24 @@ namespace DSnA
     {
         static void Main(string[] args)
         {
-            InsertionSort.InsertionSortCompare(10, 30000);
+            //InsertionSort.InsertionSortCompare(10, 30000);
 
-            // Riley contributed the code below this line
-            Console.WriteLine("Algorithms Performance Test\n");
+            // Riley and Dominic contributed the code below this line
+            Console.WriteLine("Algorithms Performance Test --------------------------------------------------\n");
+            AlgorithmTest.TestRun(100);
+            Console.WriteLine();
             AlgorithmTest.TestRun(10000);
-            AlgorithmTest.TestRun(20000);
 
-            Console.WriteLine("\nReal World Application\n");
+            Console.WriteLine("Algorithms Application Test --------------------------------------------------\n");
             AlgorithmTest.RealWorldApplication();
 
-            Console.WriteLine("Data Structures Performance Test\n");
-            BinarySearchTreeTest.TestRun(10000);
-            BinarySearchTreeTest.TestRun(20000);
+            Console.WriteLine("Data Structures Performance Test ---------------------------------------------\n");
+            DataStructuresTest.TestRun(100);
+            Console.WriteLine();
+            DataStructuresTest.TestRun(10000);
 
-            Console.WriteLine("\nReal World Application\n");
-            BinarySearchTreeTest.RealWorldApplication();
+            Console.WriteLine("Data Structures Application Test ---------------------------------------------\n");
+            DataStructuresTest.RealWorldApplication();
 
             /* The method InsertionSortSLL() isn't working properly with
              * the benchmark testing. It keeps throwing up error 

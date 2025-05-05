@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using DSnA.DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace DSnA
         private int[] arr;
         private List<int> li;
         private SinglyLinkedList sll;
-
+        /*
         [GlobalSetup]
         public void Setup()
         {
@@ -58,5 +59,6 @@ namespace DSnA
 
             InsertionSort.InsertionSortSLL(sllCopy);
         }
+        */
     }
 }
